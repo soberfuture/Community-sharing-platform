@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.order.entity.Order" table="t_order">
+		<id name="oid" column="oid" length="16">
+			<generator class="native"/>
+		</id>
+		<property name="sid" column="sid" length="16"/>
+		<property name="price" column="price" length="16"/>
+		<property name="count" column="count" length="10" />
+		<property name="total" column="total" length="16"/>
+		<property name="time" column="time" length="25" />
+		<property name="state" column="state" length="1" />
+		<property name="name" column="name" length="16" />
+		<property name="phone" column="phone" length="11" />
+		<property name="addr" column="addr" length="40" />
+		<property name="uid" column="uid" length="16" />
+		<property name="uuid" column="uuid" length="16" />
+		<property name="uphone" column="uphone" length="11" />
+	</class>
+</hibernate-mapping>

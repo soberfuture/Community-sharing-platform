@@ -1,0 +1,338 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	}
+/*主要盒子*/
+.main_box{
+	width: 98%;
+	height: auto;
+	margin: 20px auto;
+	position: relative;
+	padding-bottom: 30px;
+	border-radius: 20px;
+	}
+/*头部盒子*/
+.top_box{
+	width: 100%;
+	height: 60px;
+	margin-top: 8px;
+	}
+.choose_box{
+	width: 600px;
+	height: 60px;
+	margin-left: 100px;
+	}
+.choose_box a{
+	float: left;
+	width: 150px;
+	height: 58px;
+	border: 1px solid #e5e5e5;
+	margin-left: 30px;
+	border-radius: 13px;
+	line-height: 58px;
+	text-align: center;
+	font-size: 22px;
+	transition: all 0.4s ease;
+	cursor: pointer;
+	}
+.choose_box a:not(.a1){
+	background: #fff;
+	}
+.choose_box a:hover,
+.choose_box a:focus{
+	background: #1DC7EA;
+	color: #fff;
+	}
+.a1{
+	background: #1DC7EA;
+	color: #fff;
+	}
+/*中间部分*/
+.middle_box{
+	width: 100%;
+	margin-top: 10px;
+	}
+.middle_section{
+	width: 1400px;
+	margin: 0 auto;
+	}
+.middle_section::after{
+	clear: both;
+	}
+/*添加按钮*/
+.middle_section a{
+	display: block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: red;
+	line-height: 60px;
+	text-align: center;
+	font-size: 22px; 
+	background: #fff;
+	transition: all 0.4s ease;
+	cursor: pointer;
+	border: 1px solid #e5e5e5;
+	}
+.middle_section a:hover,
+.middle_section a:focus{
+	background: #1DC7EA;
+	color: #fff;
+	}
+.middle_section ul{
+	width: 100%;
+	margin: 0 auto;
+	}
+.middle_section ul li{
+	float: left;
+	display: block;
+	border-radius: 8px;
+	overflow: hidden;
+	border: 1px solid #e5e5e5;
+	}
+/*分享列表*/
+.share_item{
+	width: 270px;
+	height: auto;
+	margin: 10px 5px 0 5px;
+	background: #fff;
+	}
+/*图片盒子*/
+.item_img_box{
+	width: 270px;
+	height: 140px;
+	overflow: hidden;
+	}
+.item_img_box img{
+	width: 270px;
+	height: 140px;
+	}
+/*商品信息盒子*/
+.item_info_box{
+	width: 250px;
+	height: 155px;
+	padding: 5px 10px 0 10px;
+	font-family: 楷体;
+	font-size: 25px;
+	}
+
+.item_info_box p{
+	padding-top: 5px;
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden;
+	}
+/*名称*/
+.goods_name span{
+	color: #33FF72;
+	}
+/*价钱*/
+.goods_price span{
+	color: #FE5757;
+	}
+/*操作*/
+.goods_operation{
+	width: 100%;
+	overflow: hidden;
+	}
+.goods_operation button{
+	width: 60px;
+	height: 40px;
+	font-size: 18px;
+	line-height: 40px;
+	text-align: center;
+	border: 0;
+	border-radius: 8px;
+	background: #FF5E00;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	}
+.goods_operation button:hover{
+	background: red;
+	}
+.goods_operation button:focus{
+	outline: none;
+	}
+/*清除浮动*/
+.clearfix{
+	clear: both;
+	visibility: hidden;
+	}
+.clearfix::after{
+	content: '.';
+	clear: both;
+	}
+/*换页按钮*/
+.bottom_box{
+	width: 100%;
+	}
+.pn_page_box{
+	width: 1200px;
+	height: 50px;
+	margin: 40px auto;
+	text-align: center;
+	line-height: 50px;
+	font: 仿宋;
+	}
+.pn_page_box a{
+	padding: 20px;
+	border-radius: 50%;
+	background: #fff;
+	color: #F93;
+	font-weight: bold;
+	transition: all 0.5s ease;
+	cursor: pointer;
+	border: 1px solid #F93;
+	box-sizing: border-box;
+	}
+.pn_page_box a:hover{
+	border: 1px solid transparent;
+	background: #F93;
+	color: #fff;
+	}
+/*弹出框*/
+.add_fixed_box{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(255,255,255,0.6);
+	display: none;
+	z-index: 900;
+	}
+.xg_box{
+	display: none;
+	margin: 100px  auto auto 200px;
+	width: 650px;
+	border: 1px solid  #999;
+	border-radius: 10px;
+	overflow: hidden;
+	padding-bottom: 20px;
+	position: relative;
+	background: #FFF;
+	z-index: 999;
+	}
+.tj_box{
+	display: block;
+	margin: 100px  auto auto 200px;
+	width: 650px;
+	border: 1px solid  #999;
+	border-radius: 10px;
+	overflow: hidden;
+	padding-bottom: 20px;
+	position: relative;
+	background: #FFF;
+	z-index: 999;
+}
+/*关闭*/
+.close_fixed_box{
+	position: absolute;
+    top: 0;
+   	right: 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+	text-shadow: 0 1px 0 #fff;
+   	text-decoration: none;
+    cursor: pointer;
+	transition: all 0.5s ease;
+	}
+.close_fixed_box:hover{
+	transform: rotate(360deg);
+	}
+.xg_box div{
+	margin-top: 5px;
+	}
+.xg_box input{
+	font-size: 16px;
+	}
+.xg_box_left{
+	margin-left: 10px;
+	float: left;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	}
+.xg_box_right{
+	float: left;
+	width: 210px;
+	height: 50px;
+	line-height: 50px;
+	
+	}
+.xg_box_right input{
+	margin-top: 2px;
+	width: 190px;
+	height: 40px;
+	padding-left: 10px;
+	}
+/*图片*/
+.xg_box_left_img{
+	float: left;
+	width: 100px;
+	height: 150px;
+	line-height: 150px;
+	margin-left: 10px;
+	}
+.xg_box_right_img{
+	float: left;
+	width: 450px;
+	height: 150px;
+	padding-left: 50px;
+	
+	}
+.xg_box_right_img img{
+	float: left;
+	width: 150px;
+	height: 150px;
+	border: 1px solid #ccc;
+	}
+.xg_box_right_img input{
+	float: left;
+	width: 120px;
+	height: 30px;
+	}
+/*描述*/
+.xg_box_right_describe{
+	float: left;
+	width: 540px;
+	height: 50px;
+	
+	}
+.xg_box_right_describe input{
+	float: left;
+	margin-top: 2px;
+	width: 390px;
+	height: 40px;
+	padding-left: 10px;
+	}
+/*修改按钮*/
+.submit_xg{
+	float: right;
+	width: 80px;
+	height: 40px;
+	margin-top: 10px;
+	margin-right: 20px;
+	line-height: 40px;
+	background: #DA1E1E;
+	color: #fff;
+	border: 0;
+	transition: all 0.28s ease;
+	cursor: pointer;
+	border-radius: 5px;
+	}
+.submit_xg:hover{
+	background: #FF4700;
+	margin-right: 25px;
+	}
+.submit_xg:focus{
+	outline: none;
+	}
+	

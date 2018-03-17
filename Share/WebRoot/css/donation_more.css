@@ -1,0 +1,398 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{font-family: font1;src: url(../font/BOOMBOX.TTF);}
+@font-face{font-family: font2;src: url(../font/FZJZJW.TTF);}
+@font-face{font-family: font3;src: url(../font/LTCH.TTF);}
+@font-face{font-family: font4;src: url(../font/ONYX.TTF);}
+@font-face{font-family: font5;src: url(../font/ROCK.TTF);}
+@font-face{font-family: font6;src: url(../font/TCCM____.TTF);}
+@font-face{font-family: font7;src: url(../font/codropsicons.ttf);}
+@font-face{fnot-family: font8;src: url(../font/Bitter.ttf);}
+@font-face{fnot-family: font9;src: url(../font/Bitter-Bold.ttf);}
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	}
+i{
+	font-style: normal;
+	}
+body{
+	background: #F1E8E3;
+	}
+/*头部部分*/
+.top_header{
+	width: 100%;
+	height: 30px;
+	background: rgba(245,245,245,1);
+	}
+.top_header .top_header_section{
+	width: 1200px;
+	height: 30px;
+	margin: auto;
+	line-height: 40px;
+	}
+.top_header_left{
+	float: left;
+	min-width: 100px;
+	height: 30px;
+	text-align: center;
+	}
+.top_header_left .to_home{
+	color: black;
+	font-size: 15px;
+	}
+.top_header_left .to_home:hover{
+	color: #f60;
+	}
+.top_header_left .backHome{
+	width: 30px;
+	height: 30px;
+	float: left;
+	background: url(../images/backhome1.png);
+	background-size: 30px 30px;
+	}
+.top_header_left a:hover .backHome{
+	background: url(../images/backhome2.png);
+	background-size: 30px 30px;
+	}
+/*右边注册*/
+.top_header_right{
+	float: right;
+	line-height: 30px;
+	}
+.top_header_right .to_register{
+	color: black;
+	}
+.top_header_right .to_register:hover{
+	color:　#f60;
+	}
+/*头部*/
+.sales_more_top_box{
+	background: rgba(255,255,255,1);
+	width: 100%;
+	height: 80px;
+    margin: 0 auto;
+	}
+.sales_more_top{
+	width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+	}
+/*左边部分*/
+.sales_more_top .sales_more_top_left{
+	float: left;
+	font-size: 50px;
+	line-height: 80px;
+	font-family: font2;
+	color: #FF0047;
+	letter-spacing: 5px;
+	cursor: pointer;
+	}
+/*右边部分*/
+.sales_more_top .sales_more_top_right{
+	float: right;
+	width: 200px;
+	height: 80px;
+	text-align: center;
+	min-height: 80px;
+	position: relative;
+	}
+.sales_more_top_right span a{
+	padding: 5px;
+	font-size: 20px;
+	color: #666;
+	line-height: 80px;
+	border: 1px solid #666;
+	border-radius: 10px;
+	transition: all 0.3s;
+	}
+.sales_more_top_right span a:hover{
+	color: rgba(0,255,0,1);
+	border: 1px solid rgba(0,255,0,1);
+	}
+.login_after{
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	width: 200px;
+	height: 100%;
+	display: block;
+	}
+.login_after .firstImg{
+	float: left;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+	}
+.login_after span{
+	width: 60px;
+	height: 20px;
+	font-size: 20px;
+	float: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	line-height: 60px;
+	margin-left: 10px;
+	}
+/*用户小窗口*/
+.login_after .userToolBox{
+	width: 300px;
+	height: 200px;
+	position: relative;
+	top: -360px;
+	left: 0;
+	z-index: 99999;
+	transition: 0.4s;
+	background: #fff;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	}
+/*小窗口头像*/
+.userToolBox .userToolBox_userImg{
+	width: 72px;
+	height: 72px;
+	position: absolute;
+	top: 20px;
+	left: 114px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	overflow: hidden;
+	}
+.userToolBox_userImg img{
+	width: 72px;
+	height: 72px;
+	}
+/*小窗口用户名*/
+.userToolBox .userToolBox_username{
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	position: absolute;
+	top: 95px;
+	font-size: 20px;
+	line-height: 30px;
+	}
+/*小窗口资料*/
+.userToolBox .userToolBox_myProfile{
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	top: 125px;
+	line-height: 40px;
+	}
+.userToolBox_myProfile a{
+	font-size: 18px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	color: black;
+	padding: 5px;
+	}
+.userToolBox_myProfile a:hover{
+	color: green;
+	border: 1px solid green;
+	}
+/*小窗口退出*/
+.userToolBox .userToolBox_exit{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	font-size: 20px;
+	text-align: right;
+	}
+.userToolBox .userToolBox_exit a{
+	padding-right: 20px;
+	}
+/*内容部分*/
+.main_box{
+	width: 100%;
+	height: auto;
+	/*background: rgba(255,153,0,0.6);*/
+	}
+/*标题部分*/
+.main_title{
+	width: 100%;
+	height: 200px;
+	color: #FF00B1;
+	/*color: #fff;*/
+	}
+.main_title .main_title_top{
+	display: block;
+	width: 100%;
+	height: 100px;
+	font-size: 80px;
+	font-family: font2;
+	text-align: center;
+	padding-top: 50px;
+
+	}
+.main_title .main_title_bottom{
+	display: block;
+	width: 100%;
+	height: 35px;
+	font-size: 25px;
+	font-family: font2;
+	text-align: center;
+	}
+.main_section{
+	width: 1275px;
+	height: auto;
+	margin: 0 auto;
+	}
+/*捐赠盒子*/
+.donation_box{
+	width: 1275px;
+	margin: 0 auto;
+	}
+/*捐赠列表*/
+.donation_box ul{
+	width: 1260px;
+	}
+.donation_box ul li{
+	float: left;
+	width: 300px;
+	height: 340px;
+	margin: 15px 0 0 15px;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 10px;
+	
+	}
+/*图片*/
+.donation_img_box{
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	}
+.donation_img_box img{
+	width: 300px;
+	height: 200px;
+	}
+/*名称*/
+.item_info{
+	height: 60px;
+    width: 260px;
+    padding: 10px 15px 10px 25px;
+	}
+.item_name{
+	width: 100%;
+    height: 35px;
+	}
+.item_name p{	
+    font-size: 18px;
+    line-height: 35px; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+	}
+/*点赞、关注*/
+.item-num{
+    line-height: 30px;
+    width: 100%;
+    overflow: hidden;
+	}
+.item_num span{
+    color: #999;
+	font-size: 15px;
+}
+.item_num span i{
+    vertical-align: middle;
+	
+}
+.item_num_sharenum i{
+	color: #096;
+	}
+.item_num_praisenum{
+	margin-left: 15px;
+	}
+.item_num_praisenum i{
+	color: red;
+	}
+/*底部盒子*/
+.donation_box_bottom{
+	height: 40px;
+    width: 230px;
+    padding: 10px 15px 10px 25px;
+	}
+.donation_box_bottom::after{
+	clear: both;
+	}
+.details_btn{
+	float: left;
+	width: 100px;
+	height: 40px;
+	background: red;
+	line-height: 40px;
+	text-align: center;
+	font-family: 楷体;
+	font-size: 20px;
+	background: rgba(212,35,121,0.8);
+	color: #fff;
+	transition: all 0.4s;
+	}
+.details_btn:hover{
+	background: rgba(212,35,121,1);
+	}
+.praise_btn{
+	float:	right;
+	width: 40px;
+	height: 40px;
+	transition: all 0.4s;
+	}
+.praise_btn img{
+	width: 40px;
+	height: 40px;
+	}
+
+/*换页按钮*/
+.pn_page_box{
+	width: 1275px;
+	height: 50px;
+	margin: 40px auto;
+	text-align: center;
+	line-height: 50px;
+	font: 仿宋;
+	padding-bottom: 40px;
+	}
+.pn_page_box a{
+	padding: 20px;
+	border-radius: 50%;
+	background: #fff;
+	color: #F93;
+	font-weight: bold;
+	}
+.pn_page_box a:hover{
+	background: #F93;
+	color: #fff;
+	}
+/*底部部分*/
+.footer{
+	width: 100%;
+	height: 110px;
+	background: rgba(11,12,15,0.9);
+	font-family: font5;
+	font-size: 1.1em;
+	color: #CCC;
+	}
+#footerSection{
+	padding-top: 30px;
+	width: 50%;
+	height: auto;
+	margin: auto;
+	}
+.footer #footerTitle{
+	padding-bottom: 10px;
+	text-align: center;
+	}
+.footer #footerPrompt{
+	text-align: center;
+	}
+	
+

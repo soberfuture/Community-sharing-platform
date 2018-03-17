@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.attend.entity.Attend" table="attend">
+		<id name="atid" column="atid" length="16">
+			<generator class="native"/>
+		</id>
+		<property name="uid" column="uid" length="16" />
+		<property name="aid" column="aid" length="16" />
+	
+	</class>
+</hibernate-mapping>

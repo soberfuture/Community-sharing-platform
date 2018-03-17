@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.notice.entity.Notice" table="notice">
+		<id name="nid" column="nid" length="16">
+			<generator class="native"/>
+		</id>
+		<property name="title" length="30" />
+		<property name="ptime" length="30" />
+		<property name="content" length="450" />
+		<property name="reading" length="10" />
+	</class>
+</hibernate-mapping>

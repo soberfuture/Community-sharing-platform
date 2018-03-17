@@ -1,0 +1,428 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	}
+/*主要盒子*/
+.main_box{
+	width: 98%;
+	height: auto;
+	margin: auto;
+	position: relative;
+	padding-bottom: 30px;
+	border-radius: 20px;
+	}
+/*头部盒子*/
+/*两个固定按钮*/
+.fixed_choose_box{
+	height: 60px;
+	}
+.fixed_choose_box a{
+	float: left;
+	width: 130px;
+	height: 40px;
+	margin-left: 30px;
+	line-height: 40px;
+	font-size: 18px;
+	border-radius: 18px;
+	border: 1px solid #e5e5e5;
+	margin-top: 10px;
+	text-align: center;
+	transition: all 0.4s ease;
+	cursor: pointer;
+	}
+/*其他按钮*/
+.other_choose_box{
+	height: 60px;
+	margin-top: 20px;
+	}
+.other_choose_box a{
+	float: left;
+	width: 130px;
+	height: 40px;
+	margin-left: 30px;
+	line-height: 40px;
+	font-size: 18px;
+	border-radius: 18px;
+	border: 1px solid #e5e5e5;
+	margin-top: 10px;
+	text-align: center;
+	transition: all 0.4s ease;
+	cursor: pointer;
+	}
+/*.choose_box a:not(.btn_show){
+	background: #fff;
+	}
+.choose_box a:hover,
+.choose_box a:focus{
+	background: #1DC7EA;
+	color: #fff;
+	}*/
+#a1{
+	background: #1DC7EA;
+	color: #fff;
+	}
+/*中间盒子*/
+.main_middle_box{
+	width: 100%;
+	height: auto;
+	margin: auto;
+	
+	}
+.middle_section{
+	width: 1350px;
+	height: auto;
+	
+	}
+
+/*订单表盒子*/
+.main_table{
+	width: 1340px;
+	height: auto;
+	
+	}
+.main_table thead th{
+	height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #f5f5f5;
+    color: #666;
+    font-weight: 400;
+	font-size: 26px;
+	border-right: 3px solid #fff;
+	border-left: 3px solid #fff;
+	}
+/*表头*/
+.main_table tbody tr{
+	text-align: center;
+	}
+/*头部空行*/
+.sep-row {
+    height: 15px;
+}
+
+/*行表头*/
+.tr_th{
+	background: #f5f5f5;
+    height: 31px;
+    line-height: 31px;
+    color: #aaa;
+	text-align: center;
+    overflow: hidden;
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+	}
+.tr_th td{
+	border: 1px solid #999;
+	border-bottom: 0;
+	}
+.tr_th td:nth-child(1){
+	}
+.tr_th td:nth-child(2){
+	border-left: 0;
+	}
+.tr_tb td{
+	border: 1px solid #999;
+	border-top: 0;
+	}
+.tr_tb td:nth-child(n+1){
+	border-right: 0;
+	}
+.tr_tb td:last-child{
+	border-right: 1px solid #999;
+	}
+/*商品图片*/
+.good_item_td{
+	overflow: hidden;
+	padding: 5px;
+	}
+.good_item{
+    width: 100%;
+	padding: 6px;
+}
+.good_img{
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 0 14px;
+}
+.good_img img{
+	width: 100px;
+    height: 100px;
+	}
+/*商品介绍*/
+.good_msg{
+	float: left;
+	width: 500px;
+	font-size: 20px;
+	line-height: 22px; 
+	letter-spacing: 2px;
+	overflow: hidden;
+	text-align: left;
+	}
+/*商品数量*/
+.good_number{
+	font-size: 20px;
+	color: #F00;
+	}
+/*收货人*/
+.buyer_name{
+	padding-bottom: 10px;
+	}
+/*联系电话*/
+.buyer_info_box p:nth-child(2){
+	padding-top: 5px;
+	}
+/*单价*/
+.good_Oneprice_box{
+	padding-bottom: 10px;
+	}
+.good_Oneprice{
+	color: red;
+	}
+/*总额*/
+.good_Allprice_box{
+	padding-top: 5px;
+	}
+.good_Allprice{
+	color: red;
+	}
+/*收货地址*/
+.address_td{
+	color: black;
+	}
+.get_goods_address{
+	color: #00F;
+	font-family: 楷体;
+	font-size: 18px;
+	}
+/*收货时间*/
+.order_time{
+	color: black;
+	}
+/*交易状态*/
+.order_state p{
+	color: green; 
+	padding-bottom: 10px;
+	}
+.order_state div{
+	width: 90%;
+	height: 40px;
+	margin: auto;
+}
+.Agree,
+.Refused{
+	display: block;
+	float: left;
+	margin-left: 20px;
+	width: 60px;
+	height: 40px;
+	border: 0;
+	font-size: 20px;
+	line-height: 40px;
+	font-weight: bold;
+	border-radius: 7px;
+	cursor: pointer;
+	}	
+.Agree:focus,
+.Refused:focus,
+.Evaluation,
+#qrsh{
+	outline: none;
+	}
+/*接单*/
+.Agree{
+	background: #0C3;
+	color: #fff;
+	}
+/*拒绝*/
+.Refused{
+	background: #F00;
+	color: #fff;
+	}
+/*确认收货*/
+.qrsh{
+	display: block;
+	/* float: left;
+	margin-left: 20px; */
+	margin: auto;
+	width: 110px;
+	height: 40px;
+	border: 0;
+	font-size: 20px;
+	line-height: 40px;
+	font-weight: bold;
+	border-radius: 7px;
+	cursor: pointer;
+	background: #0C3;
+	color: #fff;
+	}
+.ghfk{
+	display: block;
+	margin: auto;
+	width: 130px;
+	height: 40px;
+	border: 0;
+	font-size: 20px;
+	line-height: 40px;
+	font-weight: bold;
+	border-radius: 7px;
+	cursor: pointer;
+	background: #0C3;
+	color: #fff;
+}
+/*评论*/
+.Evaluation{
+
+	width: 60px;
+	height: 40px;
+	border: 0;
+	font-size: 20px;
+	line-height: 40px;
+	font-weight: bold;
+	border-radius: 7px;
+	cursor: pointer;
+	background: #00A6CC;
+	color: #fff;
+	}
+
+
+
+
+
+
+
+
+
+
+/*清除浮动*/
+.clearfix{
+	clear: both;
+	visibility: hidden;
+	}
+.clearfix::after{
+	content: '.';
+	clear: both;
+	}
+/*换页按钮*/
+.bottom_box{
+	width: 100%;
+	}
+.pn_page_box{
+	width: 1200px;
+	height: 50px;
+	margin: 40px auto;
+	text-align: center;
+	line-height: 50px;
+	font: 仿宋;
+	}
+.pn_page_box a{
+	padding: 20px;
+	border-radius: 50%;
+	background: #fff;
+	color: #F93;
+	font-weight: bold;
+	transition: all 0.5s ease;
+	cursor: pointer;
+	border: 1px solid #F93;
+	box-sizing: border-box;
+	}
+.pn_page_box a:hover{
+	border: 1px solid transparent;
+	background: #F93;
+	color: #fff;
+	}
+/*弹出框*/
+.Evaluation_fixed_box{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(255,255,255,0.6);
+	display: none;
+
+	}
+.Evaluation_fixed_section{
+	width: 650px;
+	height: 420px;
+	position: relative;
+	top: 200px;
+	left: 300px;
+	background: rgba(242,242,242,1);
+	border: 1px solid black;
+	border-radius: 15px;
+	overflow: hidden;
+	}
+/*文字评论*/
+.Evaluation_text{
+	display: block;
+	position: absolute;
+	top: 10%;
+	left: 0;
+	width: 100%;
+	height: 66%;
+	font-size: 25px;
+	padding-left: 20px;
+	padding-top: 20px;
+	border:0;
+	}
+.Evaluation_text:focus{
+	outline-right: none;
+	outline-left: none;
+	}
+/*星级评价*/
+.Evaluation_start{
+	width: 80%;
+    height: 12%;
+    position: absolute;
+	bottom: 1%;
+	left: 1%;
+	}
+.Evaluation_start img{
+	width: 25px;
+	height: 25px;
+	}
+.starbox1{
+	position: absolute;
+	left: 0;
+	top: 10px;
+	}
+.starbox2{
+	display: none;
+	}
+.Evaluation_num{
+	position: absolute;
+	right: 0;
+	top: 0;	
+	color: #F00;
+	font-size: 40px;
+	
+	}
+
+/*评论按钮*/
+.Evaluation_submit{
+	position: absolute;
+	bottom: 1%;
+	right: 1%;
+	width: 12%;
+	height: 16%;
+	border: 0;
+	font-size: 30px;
+	text-align: center;
+	border-radius: 10px;
+	background-color: #0CF;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	}
+.Evaluation_submit:hover{
+	background-color: #09F;
+	}
+.Evaluation_submit:focus{
+	outline: none;
+	}
+	

@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+#main{
+    		width: 1200px;
+    		height: 1000px;
+    		background-color: yellow;
+    		margin: 0 auto;
+  	}
+  	#top{
+  		width: 1200px;
+  		height: 100px;
+  		background-color: yellow;
+  		float: left;
+  	}
+  	#middle{
+  		width: 1200px;
+  		height: 850px;
+  		background-color: yellow;
+  		float: left;
+  	}
+  	#mleft{
+  		width: 200px;
+  		height: 850px;
+  		background-color: fuchsia;
+  		float: left;
+  	}
+  	#mright{
+  		width: 1000px;
+  		height: 850px;
+  		background-color: orange;
+  		float: left;
+  	}
+  	#botton{
+  		width: 1200px;
+  		height: 50px;
+  		background-color: #ccc;
+  		float: left;
+  	}

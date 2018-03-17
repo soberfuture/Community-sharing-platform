@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.share.entity.Share" table="share">
+		<id name="sid" column="sid" length="16">
+			<generator class="native"></generator>
+		</id>
+		<property name="sname" column="sname" length="16"/>
+		<property name="stype" column="stype" length="5"/>
+		<property name="sexplain" column="sexplain" length="200"/>
+		<property name="picture" column="picture" length="20"/>
+		<property name="deposit" column="deposit" length="8"/>
+		<property name="price" column="price" length="8"/>
+		<property name="state" column="state" length="1"/>
+		<property name="uid" column="uid" length="16"/>
+		<property name="stime" column="stime" length="20"/>
+	</class>
+</hibernate-mapping>

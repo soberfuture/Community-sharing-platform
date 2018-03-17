@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.comments.entity.Comments" table="comments">
+		<id name="cid" length="16">
+			<generator class="native"/>
+		</id>
+		<property name="level" length="2" />
+		<property name="content" length="250" />
+		<property name="uid" length="16" />
+		<property name="sid" length="16" />
+		<property name="type" length="10" />
+		<property name="ctime" length="30" />
+	
+	</class>
+</hibernate-mapping>

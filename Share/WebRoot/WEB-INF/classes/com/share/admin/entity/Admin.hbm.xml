@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.admin.entity.Admin" table="admin">
+		<id name="aid" column="aid" length="16">
+			<generator class="native"/>
+		</id>
+		<property name="adminname" column="adminname" length="16" not-null="true"/>
+		<property name="password" column="password" length="16" not-null="true"/>
+	</class>
+</hibernate-mapping>

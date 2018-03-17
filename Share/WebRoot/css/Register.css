@@ -1,0 +1,205 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	}
+/*头部*/
+.header{
+	width: 100%;
+	height: 100px;
+	background: rgba(102,255,255,0.3);
+	position: relative;
+	}
+/*头部logo*/
+.header #logo{
+	position: absolute;
+	margin-left: 50px;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 3px solid rgba(0,102,255,1);
+	}
+.header #logo:hover{
+	transform: rotateY(360deg);
+	transition: all 0.7s;
+	}
+.header .welcome{
+	opacity: 0;
+	margin-left: 400px;
+	margin-top: 41px;
+	font-size: 1.5em;
+	position: absolute;
+	font-family: font3;
+	}
+/*.header .toLogin{
+	position: absolute;
+	right: 50px;
+	line-height: 100px;
+	}*/
+/*注册部分*/
+.form input{
+	margin-top: 5px;
+	max-width: 180px;
+	min-height: 35px;
+	display: inline;
+	padding-left: 12px;
+	}
+#registerBg{
+	width: 100%;
+	min-height: 800px;
+	background: url(../images/registerBoxBg.jpg) no-repeat;
+	background-size: 100% 900px;
+	z-index: 2;
+	display: block;
+	}
+#registerBox{
+	display: block;
+	border-top: 1px solid rgb(209,255,255);
+	border-bottom: 1px solid rgb(34,35,38);
+	width: 100%;
+	min-height: 800px;
+	background: rgba(0,0,0,0.4);
+	z-index: 20;
+	display: none;
+	opacity: 0;
+	}
+#registerMain{
+	display: none;
+	opacity: 0;
+	border-radius: 20px;
+	max-width: 800px;
+	min-height: 800px;
+	margin-top: 30px;
+	margin: auto;
+	background: url(../images/registerSection.jpg) no-repeat;
+	background-size: 800px 800px;
+	/*background: rgba(255,255,204,0.8);*/
+	}
+.titleSection img{
+	resize: none;
+	max-width: 40px;
+	max-height: 40px;
+	}
+/*标题/输入框/提示框部分*/
+.titleSection{
+	min-width: 40px;
+	min-height: 40px;
+	draggable: none;
+	/*border: 1px solid red;*/
+	}
+.titleSection img{
+	resize: none;
+	max-width: 40px;
+	max-height: 40px;
+	}
+.inputSection{
+	min-width: 200px;
+	min-height: 40px;
+	margin-left: 5px;
+	/*border: 1px solid red;*/
+	}
+.inputSection input{
+	font-size: 18px;
+	border-radius: 7px;
+	border: 0px;
+	}
+.inputSection input:focus{
+	outline: none;
+	background: #CFF;
+	transition: 0.3s;
+	}
+.messagesSection{
+	line-height: 50px;
+	max-width: 300px;
+	min-height: 50px;
+	font-size: 18px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: bold;
+	}
+/*表单内容*/
+#usernameBox,#password1Box,#password2Box,
+#nameBox,#sexBox,#idBox,#telBox,#emailBox,#addressBox{
+	max-width: 600px;
+	min-height: 55px;
+	/*border: 1px solid red;*/
+	margin: auto;
+	margin-top: 20px;
+	}
+#usernameBox{
+	padding-top: 50px;
+	}
+#buttonBox{
+	max-width: 300px;
+	margin: 20px auto;
+	text-align: center;
+	}
+#buttonBox button{
+	min-width: 100px;
+	min-height: 35px;
+	font-size: 18px;
+	color: #fff;
+	border: 0px;
+	background-color: #090;
+	border-radius: 7px;
+	margin: 0 10px 0 10px;
+	}
+#buttonBox button:hover{
+	cursor: pointer;
+	background-color: #0C3;
+	transition: 0.3s;
+	}
+#buttonBox button:focus{
+	outline: none;
+	}
+#sexBox select{
+	margin-top: 5px;
+	margin-left: 40px;
+	width: 80px;
+	height: 30px;
+	}
+.titleSection{
+	font-family: 楷体;
+	font-size: 22px;
+	}
+.titleSection,.inputSection,.messagesSection{
+	float: left;
+	}
+/*登录部分*/
+.toLogin{
+	display: block;
+	width: 100%;
+	text-align: right;
+	padding-right: 50px;
+	padding-bottom: 20px;
+	}
+/*底部*/
+.footer{
+	width: 100%;
+	height: 110px;
+	background: rgba(11,12,15,0.9);
+	font-family: font5;
+	font-size: 1.1em;
+	color: #CCC;
+	position: relative;
+	}
+#footerSection{
+	padding-top: 30px;
+	width: 50%;
+	height: auto;
+	margin: auto;
+	
+	}
+.footer #footerTitle{
+	padding-bottom: 10px;
+	text-align: center;
+	}
+.footer #footerPrompt{
+	text-align: center;
+	}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.transfer.entity.Transfer" table="transfer">
+		<id name="tid" length="16">
+			<generator class="native"></generator>
+		</id>
+		<property name="buyer" length="16"/>
+		<property name="seller" length="16"/>
+		<property name="oid" length="16"/>
+		<property name="type" length="10"/>
+		<property name="plife" length="10"/>
+		<property name="ppoints" length="16"/>
+		<property name="award" length="16"/>
+		<property name="total" length="16"/>
+		<property name="time" length="30"/>
+	</class>
+</hibernate-mapping>

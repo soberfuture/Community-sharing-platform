@@ -1,0 +1,320 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{font-family: font1;src: url(../font/BOOMBOX.TTF);}
+@font-face{font-family: font2;src: url(../font/FZJZJW.TTF);}
+@font-face{font-family: font3;src: url(../font/LTCH.TTF);}
+@font-face{font-family: font4;src: url(../font/ONYX.TTF);}
+@font-face{font-family: font5;src: url(../font/ROCK.TTF);}
+@font-face{font-family: font6;src: url(../font/TCCM____.TTF);}
+@font-face{font-family: font7;src: url(../font/codropsicons.ttf);}
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	}
+body{
+	font-family: "微软雅黑";
+	background: url(../images/aaa.jpg) fixed no-repeat;
+	background-size: 100% 100%;
+	}
+/*活动列表盒子*/
+.act_list_box{
+	width: 1100px;
+	margin: auto;
+	z-index: 666;
+	}
+/*添加按钮*/
+.add_btn{
+	display: block;
+	position: fixed;
+	top: 20px;
+	left: 30px;
+	width: 80px;
+	height: 80px;
+	background: url(../images/addY.png) no-repeat;
+	background-size: 80px 80px;
+	cursor: pointer;
+	transition: all 0.2s linear; 
+	}
+.add_btn:hover{
+	background: url(../images/addG.png) no-repeat;
+	background-size: 80px 80px;
+	}
+/*清除浮动*/
+.clear_fix{
+	clear: both;
+	display: block;
+	}
+/*活动列表UL*/
+.act_list_box ul{
+	width: 1010px;
+	padding: 50px;
+	}
+/*活动列表*/
+.act_list_box ul li{
+	position: relative;
+	width:　1000px;
+	height: 260px;
+	margin-top: 20px;
+	border: 1px solid black;
+	border-radius: 10px;
+	position: relative;
+	top: 0;
+	color: rgba(73,65,54,1);
+	background: rgba(255,255,255,0.9);
+	/*background: url(../images/actListBg.jpg) no-repeat;
+	background-size: 100% 100%;*/
+	}
+/*删除按钮*/
+.delete_btn{
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	cursor: pointer;
+	background: url(../images/delectP.png) no-repeat;
+	background-size: 50px 50px;
+	transition: all 0.3s linear;
+	}
+.delete_btn:hover{
+	background: url(../images/delectR.png) no-repeat;
+	background-size: 50px 50px;
+	transform: rotate(360deg);
+	}
+/*时间部分*/
+.time_item{
+	float: left;
+	width: 200px;
+	height: 100%;
+	text-align: center;
+	position: relative;
+	/*border-right: 1px solid red;*/
+	}
+.start_time p,
+.stop_time p{
+	font-size: 17px;
+	margin-top: 10px;
+	}
+/*开始时间*/
+.start_time{
+	width: 100%;
+	font-size: 20px;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	}
+/*结束时间*/
+.stop_time{
+	width: 100%;
+	font-size: 20px;
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	}
+/*内容部分*/
+.content_item{
+	float: left;
+	width: 300px;
+	height: 100%;
+	margin-left: 20px;
+	overflow: hidden;
+	}
+/*活动标题*/
+.act_title{
+	font-size: 27px;
+	font-weight: bold;
+	}
+/*活动内容*/
+.act_content{
+	text-indent: 2em;
+	letter-spacing: 2px;
+	font-size: 22px;
+	padding-top: 20px;
+	font-family: 楷体;
+	font-weight: 600;
+	}
+/*图片部分*/
+.img_item{
+	float: right;
+	width: 450px;
+	height: 100%;
+	overflow: hidden;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	}
+.img_item img{
+	width: 450px;
+	height: 100%;
+	}
+/*添加盒子*/
+.add_fixed{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	background: rgba(255,255,255,0.5);
+	}
+.add_box{
+	width: 1000px;
+	height: auto;
+	background: linear-gradient(-45deg, rgba(115,228,182,0.9), rgba(113,180,179,0.9));
+	z-index: 99999;
+	position: relative;
+	left: 15%;
+	top: 50px;
+	border-radius: 10px;
+	padding-bottom: 100px;
+	}
+/*关闭活动框*/
+.close_add_box{
+	width: 40px;
+	height: 40px;
+	background: url(../images/closeR.png);
+	background-size: 40px 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	display: block;
+	transition: all 0.2s linear;
+	}
+.close_add_box:hover{
+	top: -5px;
+	}
+.add_act_list{
+	padding-top: 20px;
+	}
+.add_act_list li{
+	margin-top: 15px;
+	line-height: 32px;
+	}
+.add_act_list li:nth-child(1) .act_item_box{
+	height: 32px;
+	}
+.add_act_list li:nth-child(2) .act_item_box{
+	height: 132px;
+	}
+.add_act_list li:nth-child(2) .act_item_box .act_item_right{
+	height: 132px;
+	position: relative;
+	}
+/*添加内容*/
+.act_item_box{
+	clear: both;
+	}
+/*左边部分*/
+.act_item_left{
+	float: left;
+	text-align: right;
+	width: 120px;
+	margin-right: 20px;
+	color: #fff;
+	font-size: 20px;
+	}
+/*右边部分*/
+input:focus{
+	outline: none;
+	}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+	-webkit-appearance: none !important;
+	}
+input[type="number"]{
+	-moz-appearance:textfield;
+	}
+.act_item_right input[type=text]{
+	border: 1px solid rgba(115,228,182,0.9);
+	height: 30px;
+    border-radius: 5px;
+    line-height: 32px;
+    padding-left: 5px;
+	font-size: 17px;
+	}
+.act_item_right input[type=number]{
+	border: 1px solid rgba(115,228,182,0.9);
+	height: 30px;
+    border-radius: 5px;
+    line-height: 32px;
+    padding-left: 5px;
+	font-size: 17px;
+	}
+.act_item_right input[type=datetime-local]{
+	width: 200px;
+	border: 1px solid rgba(115,228,182,0.9);
+	height: 30px;
+    border-radius: 5px;
+    line-height: 32px;
+    padding-left: 5px;
+	font-size: 17px;
+	}
+.act_item_right input[type=datetime]{
+	width: 200px;
+	border: 1px solid rgba(115,228,182,0.9);
+	height: 30px;
+    border-radius: 5px;
+    line-height: 32px;
+    padding-left: 5px;
+	font-size: 17px;
+	}
+.act_item_right input[type=file]{
+	border: 1px solid rgba(115,228,182,0.9);
+	border-radius: 5px;
+	line-height: 32px;
+    padding-left: 5px;
+	font-size: 17px;
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+	}
+/*活动标题*/
+.act_title{
+	width: 400px;
+	}
+/*活动描述*/
+.act_item_right textarea{
+	width: 500px;
+    height: 100px;
+    resize: none;
+    padding: 3px 8px;
+	border: 1px solid rgba(115,228,182,0.9);
+	border-radius: 5px;
+	font-size: 20px;
+	}
+/*图片*/
+#preview{
+	float: left;
+	width: 200px;
+	height:130px;
+	border:1px solid rgba(115,228,182,0.9);
+	overflow: hidden;
+	}
+#preview img{
+	width: 100%;
+	height: 100%;
+	}
+/*时间部分*/
+.act_time{
+	cursor: pointer;
+	}
+/*提交按钮*/
+.act_submit{
+	width: 100px;
+    height: 35px;
+    border-radius: 7px;
+    border: none;
+    font-size: 16px;
+    line-height: 35px;
+    background: rgba(215,79,121,1);
+    color: #fff;
+    cursor: pointer;
+	margin-left: 220px;
+	margin-top: 50px;
+	position: absolute;
+	bottom: 30px;
+	}

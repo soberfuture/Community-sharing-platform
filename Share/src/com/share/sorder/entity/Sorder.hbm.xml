@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.sorder.entity.Sorder" table="t_sorder">
+		<id name="soid" length="16">
+			<generator class="native"></generator>
+		</id>
+		<property name="sid" length="16"/>
+		<property name="price" length="16"/>
+		<property name="time" length="25"/>
+		<property name="state" length="1"/>
+		<property name="name" length="20"/>
+		<property name="phone" length="11"/>
+		<property name="addr" length="40"/>
+		<property name="uid" length="16"/>
+		<property name="uuid" length="16"/>
+		<property name="uphone" length="11"/>
+		<property name="start" length="25"/>
+		<property name="stop" length="25"/>
+		<property name="total" length="10"/>
+	</class>
+</hibernate-mapping>

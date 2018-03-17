@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.donate.entity.Donate" table="donate">
+		<id name="did" column="did" length="16">
+			<generator class="native"></generator>
+		</id>
+		<property name="title" length="20"/>
+		<property name="picture" length="30"/>
+		<property name="content" length="300"/>
+		<property name="starttime" length="30"/>
+		<property name="stoptime" length="30"/>
+		<property name="name" length="10"/>
+		<property name="phone" length="11"/>
+		<property name="site" length="30"/>
+		<property name="ptime" length="30"/>
+	</class>
+</hibernate-mapping>

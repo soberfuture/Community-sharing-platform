@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.user.entity.User" table="user">
+		<id name="uid" column="uid" length="16">
+			<generator class="native"/>
+		</id>
+		<property name="username" column="username" length="16" />
+		<property name="password" column="password" length="16" />
+		<property name="name" column="name" length="16" />
+		<property name="sex" column="sex" length="1" />
+		<property name="picture" column="picture" />
+		<property name="credit" column="credit" />
+		<property name="motto" column="motto" length="100" />
+		<property name="birthday" column="birthday" length="25" />
+		<property name="tel" column="tel" length="11"/>
+		<property name="email" column="email" length="20"/>
+		<property name="address" column="address" length="20"/>
+		<property name="fans" column="fans" length="10"/>
+		<property name="attention" column="attention" length="10"/>
+		<property name="lifecoin" column="lifecoin" length="10"/>
+		<property name="points" column="points" length="10"/>
+		<property name="time" column="time" length="30"/>
+	
+	</class>
+</hibernate-mapping>

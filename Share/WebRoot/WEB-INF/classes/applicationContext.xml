@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- 配置连接池: -->
+	<!-- 引入外部属性文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<!-- 配置C3P0连接池: -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="user" value="${jdbc.user}"/>
+		<property name="password" value="${jdbc.password}"/>
+	</bean>
+	
+	<!-- Hibernate的相关信息 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 注入连接池 -->
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 配置Hibernate的其他的属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<!-- 配置Hibernate的映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<value>com/share/user/entity/User.hbm.xml</value>
+				<value>com/share/admin/entity/Admin.hbm.xml</value>
+				<value>com/share/share/entity/Share.hbm.xml</value>
+				<value>com/share/donate/entity/Donate.hbm.xml</value>
+				<value>com/share/sales/entity/Sales.hbm.xml</value>
+				<value>com/share/order/entity/Order.hbm.xml</value>
+				<value>com/share/sorder/entity/Sorder.hbm.xml</value>
+				<value>com/share/activity/entity/Activity.hbm.xml</value>
+				<value>com/share/notice/entity/Notice.hbm.xml</value>
+				<value>com/share/attend/entity/Attend.hbm.xml</value>
+				<value>com/share/fans/entity/Fans.hbm.xml</value>
+				<value>com/share/comments/entity/Comments.hbm.xml</value>
+				<value>com/share/transfer/entity/Transfer.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 事务管理: -->
+	<!-- 事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 开启注解事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	<!-- action的配置 -->
+	<bean id="indexAction" class="com.share.index.IndexAction" scope="prototype">
+		<property name="shareService" ref="shareService"></property>
+		<property name="salesService" ref="salesService"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean id="userAction" class="com.share.user.action.UserAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+		<property name="fansService" ref="fansService"></property>
+		<property name="shareService" ref="shareService"></property>
+		<property name="salesService" ref="salesService"></property>
+	</bean>
+	
+	<bean id="adminAction" class="com.share.admin.action.AdminAction" scope="prototype">
+		<property name="adminService" ref="adminService"></property>
+	</bean>
+	
+	<bean id="shareAction" class="com.share.share.action.ShareAction" scope="prototype">
+		<property name="shareService" ref="shareService"></property>
+		<property name="commentsService" ref="commentsService"></property>
+	</bean>
+	
+	<bean id="salesAction" class="com.share.sales.action.SalesAction" scope="prototype">
+		<property name="salesService" ref="salesService"></property>
+		<property name="commentsService" ref="commentsService"></property>
+		<property name="fansService" ref="fansService"></property>
+	</bean>
+	
+	<bean id="donateAction" class="com.share.donate.action.DonateAction" scope="prototype">
+		<property name="donateService" ref="donateService"></property>
+	</bean>
+
+	
+	<bean id="orderAction" class="com.share.order.action.OrderAction" scope="prototype">
+		<property name="orderService" ref="orderService"></property>
+		<property name="salesService" ref="salesService"></property>
+		<property name="transferService" ref="transferService"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean id="sorderAction" class="com.share.sorder.action.SorderAction" scope="prototype">
+		<property name="sorderService" ref="sorderService"></property>
+		<property name="userService" ref="userService"></property>
+		<property name="transferService" ref="transferService"></property>
+	</bean>
+	
+	<bean id="activityAction" class="com.share.activity.action.ActivityAction" scope="prototype">
+		<property name="activityService" ref="activityService"></property>
+		<property name="attendService" ref="attendService"></property>
+		<property name="noticeService" ref="noticeService"></property>
+	</bean>
+	
+	<bean id="attendAction" class="com.share.attend.action.AttendAction" scope="prototype">
+		<property name="attendService" ref="attendService"></property>
+	</bean>
+	
+	<bean id="noticeAction" class="com.share.notice.action.NoticeAction" scope="prototype">
+		<property name="noticeService" ref="noticeService"></property>
+	</bean>
+	
+	<bean id="fansAction" class="com.share.fans.action.FansAction" scope="prototype">
+		<property name="fansService" ref="fansService"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean id="commentsAction" class="com.share.comments.action.CommentsAction" scope="prototype">
+		<property name="commentsService" ref="commentsService"></property>
+	</bean>
+	
+	<bean id="transferAction" class="com.share.transfer.action.TransferAction" scope="prototype">
+		<property name="transferService" ref="transferService"></property>
+	</bean>
+		
+		
+		
+		
+		
+		
+	<!-- service的创建 -->
+	<bean id="userService" class="com.share.user.service.UserService" scope="prototype">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="adminService" class="com.share.admin.service.AdminService" scope="prototype">
+		<property name="adminDao" ref="adminDao"></property>
+	</bean>
+
+	
+	<bean id="shareService" class="com.share.share.service.ShareService" scope="prototype">
+		<property name="shareDao" ref="shareDao"></property>
+	</bean>
+	
+	<bean id="donateService" class="com.share.donate.service.DonateService" scope="prototype">
+		<property name="donateDao" ref="donateDao"></property>
+	</bean>
+	
+	<bean id="salesService" class="com.share.sales.service.SalesService" scope="prototype">
+		<property name="salesDao" ref="salesDao"></property>
+	</bean>
+	
+	<bean id="orderService" class="com.share.order.service.OrderService" scope="prototype">
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>
+	
+	
+	<bean id="sorderService" class="com.share.sorder.service.SorderService" scope="prototype">
+		<property name="sorderDao" ref="sorderDao"></property>
+	</bean>
+	
+	<bean id="activityService" class="com.share.activity.service.ActivityService" scope="prototype">
+		<property name="activityDao" ref="activityDao"></property>
+	</bean>
+	
+	<bean id="attendService" class="com.share.attend.service.AttendService" scope="prototype">
+		<property name="attendDao" ref="attendDao"></property>
+	</bean>
+	
+	<bean id="noticeService" class="com.share.notice.service.NoticeService" scope="prototype">
+		<property name="noticeDao" ref="noticeDao"></property>
+	</bean>
+	
+	<bean id="fansService" class="com.share.fans.service.FansService" scope="prototype">
+		<property name="fansDao" ref="fansDao"></property>
+	</bean>
+	
+	<bean id="commentsService" class="com.share.comments.service.CommentsService" scope="prototype">
+		<property name="commentsDao" ref="commentsDao"></property>
+	</bean>
+
+	<bean id="transferService" class="com.share.transfer.service.TransferService" scope="prototype">
+		<property name="transferDao" ref="transferDao"></property>
+	</bean>
+
+
+
+
+	<!-- dao的创建 -->
+	
+	<bean id="userDao" class="com.share.user.dao.UserDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="adminDao" class="com.share.admin.dao.AdminDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="shareDao" class="com.share.share.dao.ShareDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="donateDao" class="com.share.donate.dao.DonateDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="salesDao" class="com.share.sales.dao.SalesDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="orderDao" class="com.share.order.dao.OrderDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>		
+	
+	<bean id="sorderDao" class="com.share.sorder.dao.SorderDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="activityDao" class="com.share.activity.dao.ActivityDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="attendDao" class="com.share.attend.dao.AttendDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="noticeDao" class="com.share.notice.dao.NoticeDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+	
+	<bean id="fansDao" class="com.share.fans.dao.FansDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+	
+	<bean id="commentsDao" class="com.share.comments.dao.CommentsDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="transferDao" class="com.share.transfer.dao.TransferDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>		
+		
+</beans>

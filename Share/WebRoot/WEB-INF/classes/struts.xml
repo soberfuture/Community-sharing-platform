@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="false" />
+
+	<package name="default" extends="struts-default" namespace="/">
+		<!-- 首页action -->
+		<action name="index" class="indexAction">
+			<result name="index">/jsp/home.jsp</result>
+		</action>
+		<!-- userAction-->
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="registerPage">/jsp/register.jsp</result>
+			<result name="fail">/jsp/fail.jsp</result>
+			<result name="login">/user/login.jsp</result>
+			<result name="index" type="redirectAction">index</result>
+			<result name="repwd">/user/repwd.jsp</result>
+			<result name="success">/jsp/success.jsp</result>
+			<result name="myfocus">/user/myfocus.jsp</result>
+			<result name="hisgoods">/user/hisgoods.jsp</result>
+		</action>
+		
+		<action name="admin_*" class="adminAction" method="{1}">
+			<result name="login">/admin/login.jsp</result>
+			<result name="admin">/admin/admin.jsp</result>
+		</action>
+		
+		<action name="share_*" class="shareAction" method="{1}">
+			<result name="fail">/jsp/fail.jsp</result>
+			<result name="sharetype">/goods/allshare.jsp</result>
+			<result name="successAdd" type="redirectAction">share_allShare</result>
+			<result name="sharemsg">/goods/sharemsg.jsp</result>
+			<result name="mygoods">/user/mygoods.jsp</result>
+			<result name="findByUid" type="redirectAction">share_findByUid</result>
+		</action>
+		
+		<action name="donate_*" class="donateAction" method="{1}">
+			
+		</action>
+		
+		<action name="sales_*" class="salesAction" method="{1}">
+			<result name="salestype">/goods/allsales.jsp</result>
+			<result name="buy">/goods/buysales.jsp</result>
+			<result name="mygoods">/user/mygoods.jsp</result>
+			<result name="findByUid" type="redirectAction">sales_findByUid</result>
+		</action>
+		
+		<action name="order_*" class="orderAction" method="{1}">
+			<result name="findByUid" type="redirectAction">order_findByUid</result>
+			<result name="buyer">/user/buyer.jsp</result>
+			<result name="seller">/user/seller.jsp</result>
+			<result name="fail">/jsp/fail.jsp</result>
+			<result name="success">/jsp/success.jsp</result>
+		</action>
+		
+		<action name="sorder_*" class="sorderAction" method="{1}">
+			<result name="findByUid" type="redirectAction">sorder_findByUid</result>
+			<result name="success">/jsp/success.jsp</result>
+			<result name="buyer">/user/buyer.jsp</result>
+			<result name="seller">/user/seller.jsp</result>
+		</action>
+		
+		<action name="activity_*" class="activityAction" method="{1}">
+			<result name="success">/jsp/success.jsp</result>
+			<result name="activity">/jsp/activity.jsp</result>
+			<result name="myActivity">/user/myActivity.jsp</result>
+			<result name="deal">/admin/deal.jsp</result>
+		</action>
+		
+		<action name="attend_*" class="attendAction" method="{1}">
+			<result name="success">/jsp/success.jsp</result>
+		</action>
+		
+		<action name="notice_*" class="noticeAction" method="{1}">
+			<result name="success">/jsp/success.jsp</result>
+			<result name="notice">/jsp/notice.jsp</result>
+		</action>
+		
+		<action name="fans_*" class="fansAction" method="{1}">
+			
+		</action>
+		
+		<action name="comments_*" class="commentsAction" method="{1}">
+			
+		</action>
+		
+		<action name="transfer_*" class="transferAction" method="{1}">
+			
+		</action>
+	</package>
+</struts>

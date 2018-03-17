@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+/*英文font1和font5*/
+@font-face{font-family: font1;src: url(../font/BOOMBOX.TTF);}
+@font-face{font-family: font2;src: url(../font/FZJZJW.TTF);}
+@font-face{font-family: font3;src: url(../font/LTCH.TTF);}
+@font-face{font-family: font4;src: url(../font/ONYX.TTF);}
+@font-face{font-family: font5;src: url(../font/ROCK.TTF);}
+@font-face{font-family: font6;src: url(../font/TCCM____.TTF);}
+@font-face{font-family: font7;src: url(../font/codropsicons.ttf);}
+@font-face{fnot-family: font8;src: url(../font/Bitter.ttf);}
+@font-face{fnot-family: font9;src: url(../font/Bitter-Bold.ttf);}
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: 楷体;
+	}
+body{
+	background: #FFF;
+	}
+/*清除浮动*/
+.clearfix{
+	clear: both;
+	}
+/*信息盒子*/
+.card_box{
+	max-width: 1200px;
+	height: auto;
+	margin: 20px 20px;
+	/* border: 1px solid #666;
+	box-shadow: 0 8px 15px 5px #ccc;
+	border-radius: 15px; */
+	}
+.card_box ul{
+	width: 100%;
+	margin: 0 auto;
+	}
+/*个人card*/
+.card_box ul li{
+	float: left;
+	width: 340px;
+	height: 150px;
+	margin: 20px;
+	background: rgba(242,242,245,1);
+	border: 1px solid #666;
+	box-shadow: 0 8px 8px 3px #ccc;
+	border-bottom-left-radius: 45px;
+	border-top-left-radius: 45px;
+	position: relative;
+	top: 0;
+	overflow: hidden;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	}
+/*头像*/
+.card_img{
+	float: left;
+	width: 100px;
+	height: 150px;
+	}
+.card_img img{
+	display: block;
+	margin-top: 32.5px;
+	margin-left: 10px;
+	width: 85px;
+	height: 85px;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+	}
+/*信息*/
+.card_item{
+	float: left;
+	width: 219px;
+	height: 120px;
+	margin-top: 15px;
+	border-left: 1px solid #00F;
+	padding-left: 10px;
+	}
+/*名称*/
+.item_name{
+	width: 219px;
+	height: 25px;
+	line-height: 25px;
+	white-space: nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 20px;
+	font-weight: bolder;
+	}
+/*是否关注*/
+.item_gz_btn{
+	width: 219px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	}
+.ygz_btn{
+	font-size: 16px;
+	padding: 7px;
+	border: 1px solid #000;
+	color: #000;
+	border-radius: 7px;
+	cursor: pointer;
+	}
+/*粉丝、关注*/
+.item_gfnum{
+	width: 219px;
+	height: 55px;
+	text-align: center;
+	}
+.item_gfnum span{
+	width: 219px;
+	height: 27.5px;
+	line-height: 27.5px;
+	font-size: 16px;
+	}
+/*关注*/
+.td_gz b{
+	color: #0F0;
+	}
+/*粉丝*/
+.td_fans b{
+	color: #F0F;
+	}
+

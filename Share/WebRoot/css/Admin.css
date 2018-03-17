@@ -1,0 +1,327 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	}
+body{
+	font-family: 楷体;
+	}
+/*顶部部分*/
+.top_section{
+	width: 100%;
+	height: 0px;
+	opacity: 0;
+	position: relative;
+	overflow: hidden;
+	background: rgba(196,172,234,1);
+	}
+.top_section h1{
+	margin-top: 20px;
+	text-align: center;
+	letter-spacing: 10px;
+	font-size: 50px;
+	font-weight: 900;
+	opacity: 0;
+	/*border-bottom: 1px solid #e7e7e7;*/
+	}
+/*右下角*/
+.user_box{
+	width: 300px;
+	height: 45px;
+	position: absolute;
+	right: 50px;
+	bottom: 20px;
+	opacity: 0;
+	}
+/*用户图片*/
+.user_icon{
+	float: left;
+	width: 43px;
+	height: 43px;
+	border: 1px solid #999;
+	}
+.user_icon img{
+	width: 43px;
+	height: 43px;
+	}
+/*用户名字*/
+.user_name{
+	float: left;
+	line-height: 45px;
+	width: 120px;
+	height: 45px;
+	text-align: left;
+	margin-left: 10px;
+	font-size: 20px;
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden;
+	}
+/*退出按钮*/
+.user_exit{
+	float: left;
+	margin-left: 5px;
+	line-height: 45px;
+	width: 100px;
+	height: 45px;
+	font-size: 20px;
+	}
+.user_exit_btn{
+	padding: 7px;
+	color: red;
+	border: 2px solid #666;
+	border-radius: 10px;
+	cursor: pointer;
+	color: #666;
+	transition: all 0.3s linear;
+	font-weight: bold;
+	}
+.user_exit_btn:hover{
+	border: 2px solid #000;
+	color: #000;
+	}
+/*大盒子*/
+.wrapper{
+	width: 100%;
+	/*min-height: 100vh;*/
+	position: relative;
+	top: 0;
+	overflow: hidden;
+	}
+/*左右边框*/
+.sider_left{
+	overflow: auto;
+    min-height: 100%;
+    /*height: 100vh;*/
+	opacity: 0;
+	}
+.main_right{
+	overflow-x: hidden;
+	overflow-y: auto;
+    max-height: 100%;
+	}
+/*左边部分*/
+.sider_left{
+	width: 260px;
+	max-height: 100%;
+    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	transition-property: top,bottom;
+    -webkit-transition-duration: .2s,.2s;
+    transition-duration: .2s,.2s;
+	}
+.sider_left .sider_box{
+	position: relative;
+    overflow: hidden;
+	height: 100%;
+    width: 100%;
+    z-index: 10;
+	background: rgba(152,109,219,0.7);
+	}
+/*左边背景*/
+.sider_box_background{
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+	}
+/*左边顶部部分*/
+.sider_box .sider_box_top{
+	width: 260px;
+	height: 120px;
+	}
+/*用户头像*/
+.sider_box .sider_box_top_userImg{
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-top: 10px;
+	margin-left: 20px;
+	overflow: hidden;
+	border-radius: 50%;
+	}
+.sider_box_top_userImg img{
+	width: 100px;
+	height: 100px;
+	}
+/*用户名称*/
+.sider_box .sider_box_top_username{
+	float: left;
+	width: 140px;
+	height: 100px;
+	margin-top: 10px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 22px;
+	overflow: hidden;
+	color: #fff;
+	}
+/*功能列表*/
+.sider_box .sider_box_nav_list{
+	margin-top: 20px;
+	width: 100%;
+	margin: auto;
+	}
+.sider_box_nav_list li{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-top: 5px;
+	}
+.sider_box_nav_list li a{
+	margin: auto;
+	display: block;
+	width: 230px;
+	height: 50px;
+	color: #fff;
+	font-weight: 600;
+	font-size: 20px;
+	text-decoration: none;
+	border-radius: 10px;
+	}
+.sider_box_nav_list li a:not(.siderOn):hover{
+	background: rgba(255, 255, 255, 0.20);
+	transition: 0.7s;
+	}
+.siderOn{
+	background: rgba(255, 255, 255, 0.33);
+	}
+
+/*右边部分*/
+.main_right{
+    position: absolute;
+	right: 0;
+    z-index: 2;
+    width: calc(100% - 260px);
+	height: 100%;
+	background: rgba(247,247,248,1);
+	opacity: 0;
+	}
+.main_right ul::after{
+	clear: both;
+	}
+.main_right ul:not(.now_show_ul){
+	display: none;
+	width: 100%;
+	z-index: 9;
+	position: absolute;
+	left: 0;
+	top: 0;
+	}
+/*显示UL*/
+.now_show_ul{
+	transform: scale(1.0);
+	display: block;
+	animation: showPswBox 0.45s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@keyframes showPswBox{
+	0%	{display: block;transform: scale(0);opacity: 0;}
+	50%	{transform: scale(1.1);}
+	100%	{opacity: 1;transform: none;}
+	}
+/*隐藏UL*/
+.main_right_ul{
+	animation: hiddenPswBox 0.45s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	}
+@keyframes hiddenPswBox{
+	0%	{transform: scale(1);}
+	50%	{transform: scale(1.1);opacity: 0.8;}
+	100%	{transform: scale(0);opacity: 0;display: none;}
+	}
+/*关闭按钮*/
+.closeIcon{
+	position: absolute;
+	right: 2%;
+	top: 0%;
+	}
+.closeIcon:hover{
+	cursor: pointer;
+	transform: rotate(720deg);
+	transition: 0.5s;
+	}
+/*我是卖家大盒子*/
+.seller_box{
+	width: 1200px;
+	}
+/*修改密码大盒子*/
+.pswbox{
+	margin: 50px auto;
+	width: 600px;
+	height: 400px;
+	border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    background-color: #FFFFFF;
+	font-family: 楷体;	
+	}
+/*标题*/
+.title{
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: #d6d6d6 1px solid;
+    padding: 15px 0;
+    color: #333333;
+    font-family: 楷体;
+	font-size: 20px;
+	}
+/*表单*/
+.formtable{
+	width: 90%;
+	margin: 50px auto;
+	}
+.formtable tr{
+	padding: 10px;
+	width: 100%;
+	height: 50px;
+	color: #1DEA2D;
+	}
+.formtable tr th:nth-child(1){
+    text-align: right;
+	font-size: 20px;
+	line-height: 50px;
+	width: 200px;
+	}
+.formtable tr th:nth-child(2){
+    text-align: left;
+	width: 160px;
+	}
+.formtable input:not(.sub){
+	width: 150px;
+	height: 30px;
+	font-size: 18px;
+	padding-left: 8px;
+	}
+.formtable input:focus{
+	outline: none;
+	}
+/*提交*/
+.sub{
+	width: 100px;
+	height: 35px;
+	border-radius: 7px;
+	border: none;
+	font-size: 16px;
+	line-height: 35px;
+	background: rgba(215,79,121,1);
+	color: #fff;
+	cursor: pointer;
+	}
+/*错误提示*/
+.formtable tr th:nth-child(3){
+	font-size: 20px;
+	text-align: left;
+	}

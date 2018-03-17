@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.share.fans.entity.Fans" table="fans">
+		<id name="fid" column="fid" length="16">
+			<generator class="native"/>
+		</id>
+		<property name="concern" column="concern" length="16" />
+		<property name="concerned" column="concerned" length="16" />
+	
+	</class>
+</hibernate-mapping>
